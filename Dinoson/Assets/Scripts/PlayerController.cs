@@ -118,19 +118,22 @@ public class PlayerController : Entity {
 		// Input
 		moveDirX = Input.GetAxisRaw("Horizontal");
 		if (playerPhysics.grounded) {
+			Debug.Log("Buradayim");
 			float speed = (Input.GetButton("Run"))?runSpeed:walkSpeed;
 			targetSpeed = 2 * speed;
 			currentSpeed = IncrementTowards(currentSpeed, targetSpeed,acceleration);
 			
 			// Face Direction
+			moveDirX=1;
 			if (moveDirX !=0 && !wallHolding) {
-
+				Debug.Log(moveDirX);
 				transform.eulerAngles = (moveDirX>0)?Vector3.up * 180:Vector3.zero;
 			}
 		}
-		//else {
-		//	currentSpeed = IncrementTowards(currentSpeed, targetSpeed,slideDeceleration);
-		//}
+		/*else {
+			Debug.Log("Buradayim2");
+			currentSpeed = IncrementTowards(currentSpeed, targetSpeed,slideDeceleration);
+		}*/
 		
 		// Set amount to move
 		amountToMove.x = currentSpeed;
