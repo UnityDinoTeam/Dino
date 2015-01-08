@@ -6,5 +6,5 @@ function OnGUI(){
 	GUI.skin = myGuiBlank;
 	
 	if (GUI.Button(Rect(Screen.width/2-200,Screen.height/2+50,200,50),btnTexture))
-		Application.LoadLevel("");
+		Application.LoadLevel("aboutUs");
 }
