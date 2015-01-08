@@ -46,7 +46,7 @@ public class PlayerController : Entity {
 			targetSpeed = 0;
 			currentSpeed = 0;
 		}
-		
+
 
 		// If player is touching the ground
 		if (playerPhysics.grounded) {
@@ -117,9 +117,9 @@ public class PlayerController : Entity {
 		
 		// Input
 		moveDirX = Input.GetAxisRaw("Horizontal");
-		if (!sliding) {
+		if (playerPhysics.grounded) {
 			float speed = (Input.GetButton("Run"))?runSpeed:walkSpeed;
-			targetSpeed = moveDirX * speed;
+			targetSpeed = 2 * speed;
 			currentSpeed = IncrementTowards(currentSpeed, targetSpeed,acceleration);
 			
 			// Face Direction
@@ -128,9 +128,9 @@ public class PlayerController : Entity {
 				transform.eulerAngles = (moveDirX>0)?Vector3.up * 180:Vector3.zero;
 			}
 		}
-		else {
-			currentSpeed = IncrementTowards(currentSpeed, targetSpeed,slideDeceleration);
-		}
+		//else {
+		//	currentSpeed = IncrementTowards(currentSpeed, targetSpeed,slideDeceleration);
+		//}
 		
 		// Set amount to move
 		amountToMove.x = currentSpeed;
