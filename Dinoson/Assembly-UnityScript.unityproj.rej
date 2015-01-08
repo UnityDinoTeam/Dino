@@ -1,0 +1,14 @@
+diff a/Dinoson/Assembly-UnityScript.unityproj b/Dinoson/Assembly-UnityScript.unityproj	(rejected hunks)
+@@ -47,9 +47,12 @@
+   </ItemGroup>
+   <ItemGroup>
+      <Compile Include="Assets\Scripts\BackButton.js" />
++     <Compile Include="Assets\Scripts\LangButton.js" />
+      <Compile Include="Assets\Scripts\MarketButton.js" />
++     <Compile Include="Assets\Scripts\MusicButton.js" />
+      <Compile Include="Assets\Scripts\PlayButton.js" />
+      <Compile Include="Assets\Scripts\SettingsButton.js" />
++     <Compile Include="Assets\Scripts\SoundButton.js" />
+  <Reference Include="UnityEngine.UI">
+  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+  </Reference>
