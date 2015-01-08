@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-	
+	public TextMesh uiText;
 	public GameObject player;
 	public GameObject sawBlade;
 	public GameObject ground;
@@ -71,17 +71,9 @@ public class GameManager : MonoBehaviour
 	}
 	public static int levelCount=0;
 	void OnGUI(){
+		uiText.text = levelCount+"";
 		//	GUI.Box (new Rect (10, 10, 100, 200), "Puan:"+levelCount);
-		var Text = new GameObject();
-		
-		var textMesh = gameObject.AddComponent(TextMesh);
-		//textMesh.font = ";
-		var meshRenderer = gameObject.AddComponent(MeshRenderer);
-		meshRenderer.material = mat;
-		
-		textMesh.text = "Hello World!";
 
-		GUI.TextArea(new Rect(10, 10, 100, 200), "Puan:"+levelCount);
 	}
 	private void Update ()
 	{
