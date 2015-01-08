@@ -5,11 +5,12 @@ public class GameCamera : MonoBehaviour {
 	
 	private Transform target;
 	public float trackSpeed = 25;
-	
+	public GameObject uiText;
 	
 	// Set target
 	public void SetTarget(Transform t) {
 		target = t;
+
 	}
 	
 	// Track target
@@ -18,6 +19,7 @@ public class GameCamera : MonoBehaviour {
 			float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
 			float y = IncrementTowards(transform.position.y, target.position.y, trackSpeed);
 			transform.position = new Vector3(x,y, transform.position.z);
+			uiText.transform.position = new Vector3(x-10,y+4, 0);
 		}
 	}
 	

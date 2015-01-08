@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 	}
 	public static int levelCount=0;
 	void OnGUI(){
+		//TextMesh asdd = (TextMesh)uiText;
 		uiText.text = levelCount+"";
 		//	GUI.Box (new Rect (10, 10, 100, 200), "Puan:"+levelCount);
 
